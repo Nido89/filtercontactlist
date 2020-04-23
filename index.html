@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>My Contacts</title>
+</head>
+<body>
+    <div class="container">
+  <h1 class="center-align">
+      My Contacts
+  </h1>
+  <input type="text" id="filterInput" placeholder="Search names...">
+    <ul class="collection width-header" id="names">
+        <li class="collection-header">
+            <h4>A</h4>
+        </li>
+        <li class="collection-item">
+            <a href="#">Ahmad</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Abbas</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Ali</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Abid</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Ammar</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Amrit</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Ajmal</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Ayaash</a>
+        </li>
+        <li class="collection-header">
+            <h4>B</h4>
+        </li>
+        <li class="collection-item">
+            <a href="#">Bakar</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Bilal</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Bazjan</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Badami</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Bhuwan</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Bikash</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Boman</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Bwalal</a>
+        </li>
+        <li class="collection-header">
+            <h4>C</h4>
+        </li>
+        <li class="collection-item">
+            <a href="#">Chawal</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Carish</a>
+        </li>
+       
+        <li class="collection-item">
+            <a href="#">Calnayak</a>
+        </li>
+        <li class="collection-header">
+            <h4>D</h4>
+        </li>
+        <li class="collection-item">
+            <a href="#">Dawood</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Dilawar</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Dawat</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">DumKhan</a>
+        </li>
+        
+        <li class="collection-header">
+            <h4>E</h4>
+        </li>
+        <li class="collection-item">
+            <a href="#">Emran</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Ebaad</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Efaan</a>
+        </li>
+      
+      
+        <li class="collection-header">
+            <h4>F</h4>
+        </li>
+        <li class="collection-item">
+            <a href="#">Fahad</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Fawad</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Fayak</a>
+        </li>
+        <li class="collection-item">
+            <a href="#">Fazil</a>
+        </li>
+        
+    </ul>
+    </div>
+
+
+
+    <script>
+        //Getting the input html element
+        let filterInput = document.getElementById('filterInput');
+
+        // Add event Listener
+        filterInput.addEventListener('keyup',filterNames);
+
+        function filterNames(){
+           //Getting the value of the input
+           let filterValue = document.getElementById('filterInput').value.toUpperCase();
+           console.log(filterValue);
+
+           // GETTING THE NAMES OF THE ul
+
+           let namesUl = document.getElementById('names');
+
+
+           // Getting the names inside of the UL from ul-items
+           let liItems = namesUl.querySelectorAll('li.collection-item');
+
+           // Loop through collection item list
+           for(let i= 0; i < liItems.length; i++){
+               let a = liItems[i].getElementsByTagName('a')[0];
+               // If values match
+               if(a.innerHTML.toUpperCase().indexOf(filterValue)>
+               -1){
+
+                liItems[i].style.display = '';
+
+
+               }else{
+                liItems[i].style.display = 'none';
+               }
+
+           }
+           
+            
+        }
+    </script>
+</body>
+</html>
